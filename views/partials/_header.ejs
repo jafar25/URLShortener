@@ -1,0 +1,28 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-success">
+        <a class="navbar-brand" href="/urls">URL Shortener</a>
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/urls">My URLs</a>
+                <a class="nav-item nav-link" href="/urls/new">Create New URL</a>
+            </div>
+        </div>
+        <% if (user) { %>
+            <form action="/logout" method="POST">
+                <div style="display:flex">
+                    <h6 class="m-2 mx-3" for="Logged In" >Logged in as: <%=user.email%></h6>
+                    <button type="submit" class="btn btn-outline-dark">Logout</button>
+                </div>
+            </form>
+        <% } else {%>
+            <div class="d-flex">
+                <a href="/register" class="btn btn-info m-1">Register</button>
+                <a href="/login" class="btn btn-dark m-1">Login</a>
+            </div>
+        <% } %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</header>
